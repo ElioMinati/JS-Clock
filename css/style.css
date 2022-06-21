@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'digital-clock';
+    src: url(../fonts/digital-7.ttf);
+}
+
+html {
+    min-height: 100%;
+    /* background-image: linear-gradient(to bottom right, black, grey); */
+    background-repeat: no-repeat;
+    font-family: 'Courier New';
+    text-align: center;
+}
+
+#time {
+    font-family: 'digital-clock';
+}
