@@ -5,12 +5,31 @@
 
 html {
     min-height: 100%;
-    /* background-image: linear-gradient(to bottom right, black, grey); */
+    background-image: linear-gradient(to bottom right, rgb(2, 98, 122), rgb(29, 12, 126));
     background-repeat: no-repeat;
     font-family: 'Courier New';
     text-align: center;
+    color: white;
+}
+
+.maintext {
+    font-size: 150px;
+    text-shadow: 3px 3px 3px black,
+               6px 6px 3px black;
+}
+
+.smalltext {
+    position: relative;
+    top: -100px;
+    text-shadow: 2px 2px 2px black,
+               4px 4px 2px black;
 }
 
 #time {
+    position: relative;
+    top: -100px;
     font-family: 'digital-clock';
+    font-size: 200px;
+    text-shadow: 3px 3px 3px black,
+               6px 6px 3px black;
 }
