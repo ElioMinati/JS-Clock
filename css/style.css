@@ -61,3 +61,8 @@ option {
                4px 4px 2px black;
     border-color: black;
 }
+
+#day {
+    position: relative;
+    top: -200px;
+}

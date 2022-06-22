@@ -2,6 +2,7 @@ let dt;
 let hours;
 let minutes;
 let seconds;
+let day;
 let counter = 0;
 let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -12,19 +13,40 @@ const formatUnit = unit => {
     return unit;
 }
 
+const getDayName = nb => {
+    switch(nb) {
+        case 1:
+            return 'Monday';
+            break;
+        case 2:
+            return 'Tuesday';
+            break;
+        case 3:
+            return 'Wednesday';
+            break;
+        case 4:
+            return 'Thursday';
+        case 5:
+            return 'Friday';
+        case 6:
+            return 'Saturday';
+        case 7:
+            return 'Sunday';
+        default:
+            break;
+    }
+    return '';
+}
+
 const updateTime = () => {
     counter++;
     dt = new Date(new Date(new Date()).toLocaleString('en-US', {timeZone: timezone,}));
-    console.log(timezone);
-    console.log(dt);
     hours = formatUnit(dt.getHours());
     minutes = formatUnit(dt.getMinutes());
     seconds = formatUnit(dt.getSeconds());
-    if (counter % 2 === 0) {
-        document.getElementById('time').innerHTML = `${hours}:${minutes}:${seconds}`;
-    } else {
-        document.getElementById('time').innerHTML = `${hours}:${minutes}:${seconds}`;
-    }
+    day = getDayName(dt.getDay());
+    document.getElementById('time').innerHTML = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('day').innerHTML = `${day}`;
 }
 
 const setupTimezones = () => {
